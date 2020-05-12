@@ -12,10 +12,21 @@
             var board = new int[SIZE][];
             for (int i = 0; i < SIZE; i++)
             {
-                if (string.IsNullOrEmpty(delimiter)) board[i] = Console.ReadLine().ToCharArray().Select(x => x - '0').ToArray();
-                else board[i] = Console.ReadLine().Split(delimiter).Select(int.Parse).ToArray();
-                if (board[i].Length != SIZE) throw new ArgumentOutOfRangeException("Invalid row!");
-                if (board[i].Any(x => x > SIZE || x < 0)) throw new ArgumentOutOfRangeException("Invalid cell value!");
+                if (string.IsNullOrEmpty(delimiter)) 
+                    board[i] = Console.ReadLine()
+                        .ToCharArray()
+                        .Select(x => x - '0')
+                        .ToArray();
+
+                else 
+                    board[i] = Console.ReadLine()
+                        .Split(delimiter).Select(int.Parse).ToArray();
+
+                if (board[i].Length != SIZE) 
+                    throw new ArgumentOutOfRangeException("Invalid row!");
+
+                if (board[i].Any(x => x > SIZE || x < 0))
+                    throw new ArgumentOutOfRangeException("Invalid cell value!");
             }
 
             return board;
@@ -26,63 +37,76 @@
             string text = System.IO.File.ReadAllText(path);
             var delimiters = new[] { "\t", " ", delimiter };
             var board = text.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
-                            .Select(x => x.Split(delimiters,StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray()).ToArray();
-            if (board.Length != SIZE) throw new ArgumentOutOfRangeException("Invalid row Count!");
-            if (board.Any(x => x.Length != SIZE)) throw new ArgumentOutOfRangeException("Invalid element count in row!");
-            if (board.SelectMany(x => x).Any(x => x < 0 || x > SIZE)) throw new ArgumentOutOfRangeException("Invalid value of cell");
+                            .Select(x => x.Split(delimiters,StringSplitOptions.RemoveEmptyEntries)
+                            .Select(int.Parse).ToArray())
+                            .ToArray();
+
+            if (board.Length != SIZE) 
+                throw new ArgumentOutOfRangeException("Invalid row Count!");
+            if (board.Any(x => x.Length != SIZE)) 
+                throw new ArgumentOutOfRangeException("Invalid element count in row!");
+            if (board.SelectMany(x => x).Any(x => x < 0 || x > SIZE)) 
+                throw new ArgumentOutOfRangeException("Invalid value of cell");
+
             return board;
+        }
+        
+        public IList<int[][]> Solve(int[][] board)
+        {
+            var b = board
+                .Select(x => x.ToArray())
+                .ToArray();
+
+            var result = new List<int[][]>();
+            FindSalutionRecursively(b, result);
+            return result;
         }
 
         public void Print(int[][] result, string delimiter = " ")
         {
             foreach (var row in result)
-            {
                 Console.WriteLine(string.Join(delimiter, row));
-            }
         }
 
-        public IList<int[][]> Solve(int[][] board)
+        private void FindSalutionRecursively(int[][] salution, List<int[][]> salutionBank, int row = 0, int col = 0)
         {
-            var b = board.Select(x => x.ToArray()).ToArray();
-            var result = new List<int[][]>();
-            FindSalutionRec(b, result);
-            return result;
-        }
-
-        private void FindSalutionRec(int[][] salution, List<int[][]> salutionBank, int row = 0, int col = 0)
-        {
-            if (AllFilled(salution))
+            if (IsSolved(salution))
             {
                 salutionBank.Add(salution.Select(x => x.ToArray()).ToArray());
                 return;
             }
-            if (row == -1) return;
 
-            var nextCell = GetNextCoordinates(salution, row, col);
+            if (row == -1) 
+                return;
+
+            var nextCell = GetFreeCell(salution, row, col);
 
             //Can't touch this...go forward
             if (salution[row][col] != 0)
             {
-                FindSalutionRec(salution, salutionBank, nextCell.Key, nextCell.Value);
+                FindSalutionRecursively(salution, salutionBank, nextCell.Key, nextCell.Value);
                 return;
             }
 
             for (int val = 1; val <= SIZE; val++)
             {
                 if (!TryWriteValue(salution, row, col, val)) continue;
-                FindSalutionRec(salution, salutionBank, nextCell.Key, nextCell.Value);
+                FindSalutionRecursively(salution, salutionBank, nextCell.Key, nextCell.Value);
             }
 
             salution[row][col] = default(int);
         }
 
-        private KeyValuePair<int, int> GetNextCoordinates(int[][] board, int curRow, int curCol)
+        private bool IsSolved(int[][] board) => !board.SelectMany(x => x).Contains(default(int));
+        private KeyValuePair<int, int> GetFreeCell(int[][] board, int curRow, int curCol)
         {
             for (int i = curRow; i < SIZE; i++)
             {
                 for (int j = 0; j < SIZE; j++)
                 {
-                    if (i == curRow && j <= curCol) continue; //we are before our symbol in the same row
+                    //we are before our symbol in the same row
+                    if (i == curRow && j <= curCol) 
+                        continue; 
 
                     if (board[i][j] == default(int))
                     {
@@ -107,7 +131,8 @@
             {
                 for (int j = startCol; j < startCol + 3; j++)
                 {
-                    if (current[i][j] == val) return false;
+                    if (current[i][j] == val) 
+                        return false;
                 }
             }
             #endregion
@@ -116,6 +141,5 @@
             return true;
         }
 
-        private bool AllFilled(int[][] board) => !board.SelectMany(x => x).Contains(default(int));
     }
 }
