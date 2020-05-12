@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibbonacci", "Fibbonacci\Fibbonacci.csproj", "{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Longest SubSequence", "Longest SubSequence\Longest SubSequence.csproj", "{2C27623C-EE69-4290-AFEF-8FB379C6C055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveDownRight", "MoveDownRight\MoveDownRight.csproj", "{27BDD657-9BE7-414E-8B32-5ECC8CD42556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rod cutting", "Rod cutting\Rod cutting.csproj", "{09FD4695-1368-4915-B38A-CF3864A7E41C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C27623C-EE69-4290-AFEF-8FB379C6C055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C27623C-EE69-4290-AFEF-8FB379C6C055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C27623C-EE69-4290-AFEF-8FB379C6C055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C27623C-EE69-4290-AFEF-8FB379C6C055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27BDD657-9BE7-414E-8B32-5ECC8CD42556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27BDD657-9BE7-414E-8B32-5ECC8CD42556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27BDD657-9BE7-414E-8B32-5ECC8CD42556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27BDD657-9BE7-414E-8B32-5ECC8CD42556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AEDDA6BC-99C4-4919-884F-01B2A0879395}
+	EndGlobalSection
+EndGlobal
