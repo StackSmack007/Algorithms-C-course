@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibbonacci", "Fibbonacci\Fibbonacci.csproj", "{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fibbonacci", "Fibbonacci\Fibbonacci.csproj", "{CDBED1D0-61CB-4DEF-B97C-E709253CA6CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Longest SubSequence", "Longest SubSequence\Longest SubSequence.csproj", "{2C27623C-EE69-4290-AFEF-8FB379C6C055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Longest SubSequence", "Longest SubSequence\Longest SubSequence.csproj", "{2C27623C-EE69-4290-AFEF-8FB379C6C055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveDownRight", "MoveDownRight\MoveDownRight.csproj", "{27BDD657-9BE7-414E-8B32-5ECC8CD42556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoveDownRight", "MoveDownRight\MoveDownRight.csproj", "{27BDD657-9BE7-414E-8B32-5ECC8CD42556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rod cutting", "Rod cutting\Rod cutting.csproj", "{09FD4695-1368-4915-B38A-CF3864A7E41C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rod cutting", "Rod cutting\Rod cutting.csproj", "{09FD4695-1368-4915-B38A-CF3864A7E41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapSack", "KnapSack\KnapSack.csproj", "{1F03B279-F741-4B61-9E4F-2FDF7CC7DB33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LongestSubSequence", "LongestSubSequence\LongestSubSequence.csproj", "{EA2F06D6-D395-4367-A3DE-EBDAA80A4E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09FD4695-1368-4915-B38A-CF3864A7E41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F03B279-F741-4B61-9E4F-2FDF7CC7DB33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F03B279-F741-4B61-9E4F-2FDF7CC7DB33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F03B279-F741-4B61-9E4F-2FDF7CC7DB33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F03B279-F741-4B61-9E4F-2FDF7CC7DB33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2F06D6-D395-4367-A3DE-EBDAA80A4E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2F06D6-D395-4367-A3DE-EBDAA80A4E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2F06D6-D395-4367-A3DE-EBDAA80A4E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2F06D6-D395-4367-A3DE-EBDAA80A4E9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
