@@ -21,7 +21,7 @@ public class TopologicalSorter
         var freeNodeKey = vertixesFree.FirstOrDefault();
         if (freeNodeKey is null)
             throw new InvalidOperationException("No elements for sorting or 1 cycle graph");
-
+//Eto nqkva promqna
         while (graph.Any())
         {
             var children = graph[freeNodeKey];
